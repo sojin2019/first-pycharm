@@ -32,6 +32,3 @@ class InputSchedule():
         print(msg_update)
 
 
-
-
-InputSchedule.input_date(InputSchedule.in_item_date)
