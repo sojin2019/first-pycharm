@@ -28,6 +28,13 @@ class mainWindow(QMainWindow):
         self.textedit.resize(self.textedit.sizeHint())
         self.show()
 
+        self.comboBox = QComboBox(self)
+        self.comboBox.addItem("1st Item")
+        self.comboBox.addItem("2nd Item")
+        self.comboBox.addItem("3rd Item")
+        self.comboBox.setEditable(True)
+        comboBox.currentIndexChanged.connect(self.onSelected)
+
 
 
 
