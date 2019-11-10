@@ -14,6 +14,9 @@ class InputSchedule():
         self.item_date = now.year + now.month + now.day
         self.item_time = now.hour
 
+        print("Schedule of " + item_date )
+
+
     from datetime import datetime
     now = datetime.now()
     if now.day < 10:

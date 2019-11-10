@@ -6,6 +6,7 @@ class mw:
     def __init__(self, menu):
         self.menu = menu
         print("test1")
+        self.initUI()
 
     def initUI(self):
         print("test2")
