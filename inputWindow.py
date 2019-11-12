@@ -3,8 +3,9 @@ import mainWindow
 import inputSchedule
 from PyQt5.QtWidgets import *
 
- from datetime import datetime
-    now = datetime.now()
+from _datetime import datetime
+
+now = datetime.now()
     
 if __name__ == "__main__":
     mw = mainWindow.mw('addition test')
