@@ -18,5 +18,17 @@ if __name__ == "__main__":
     
     
     inputSchedule.InputSchedule(in_item_date,'2345', 'Coding', 'everyday for 30 days' )
+    
+    app = QApplication([])
+    button = QPushButton('Click')
+    
+    def on_button_clicked():
+        alert = QMessageBox()
+        alert.setText('You clicked the button!')
+        alert.exec_()
+
+    button.clicked.connect(on_button_clicked)
+    button.show()
+    app.exec_()
 
 
