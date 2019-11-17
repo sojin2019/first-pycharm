@@ -3,8 +3,10 @@ import mainWindow
 import mpl_squares as ms
 import inputSchedule
 from PyQt5.QtWidgets import *
+import dialogExample as dlex
 
 from _datetime import datetime
+
 
 now = datetime.now()
     
@@ -19,6 +21,10 @@ if __name__ == "__main__":
 
     inputSchedule.InputSchedule(in_item_date,'2345', 'Coding', 'everyday for 30 days' )
 
+    #app = QApplication(sys.argv)
+    #dialogex = dlex.dialogExample()
+    #dialogex.show()
+    #app.exec_()
 
 
     #app = QApplication([])
