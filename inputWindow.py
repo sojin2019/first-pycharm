@@ -22,7 +22,8 @@ if __name__ == "__main__":
     inputSchedule.InputSchedule(in_item_date,'2345', 'Coding', 'everyday for 30 days' )
 
     app = QApplication(sys.argv)
-    dlex.dialogExample()
+    dlex1 = dlex.dialogExample()
+    dlex1.show()
     app.exec_()
 
 
