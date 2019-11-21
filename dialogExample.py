@@ -19,7 +19,11 @@ class dialogExample(QMainWindow, form_class):
 
     def btnctrl(self):
         btn = QPushButton(self)
+        # Quit Button
+        btn_2 = QPushButton(self)
+        
         btn.clicked.connect(self.btnfc)
+        btn_2.clicked.connect(QCoreApplication.instance().quit)
 
     def btnfc(self):
         print('exit')
