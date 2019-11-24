@@ -24,6 +24,11 @@ class dialogExample(QMainWindow):
         btn_2 = QPushButton('Exit', self)
         btn_2.setGeometry(190,80, 120, 40)
 
+        label_1 = QLabel(self)
+        label_1.setGeometry(50, 40, 120, 20)
+        label_1.setText('Label')
+
+
 
         btn_1.clicked.connect(self.btnfc)
         # Quit Button
