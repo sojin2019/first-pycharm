@@ -28,6 +28,8 @@ class dialogExample(QMainWindow):
         label_1.setGeometry(50, 40, 120, 20)
         label_1.setText('Label')
 
+        #Qline
+        line_1 = QLine(50, 50, 50, 170)
 
 
         btn_1.clicked.connect(self.btnfc)
