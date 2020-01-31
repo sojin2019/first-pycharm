@@ -25,11 +25,10 @@ class dialogExample(QMainWindow):
         btn_2.setGeometry(190,80, 120, 40)
 
         label_1 = QLabel(self)
-        label_1.setGeometry(50, 40, 120, 20)
-        label_1.setText('Label')
-
-        #Qline
-        line_1 = QLine(50, 50, 50, 170)
+        label_1.setFrameStyle(QFrame.Panel | QFrame.Shadow_Mask)
+        label_1.setGeometry(50, 20, 260, 50)
+        label_1.setText('Please push... \n Thank you!!!!')
+        label_1.setAlignment(Qt.AlignLeft | Qt.AlignCenter)
 
 
         btn_1.clicked.connect(self.btnfc)
@@ -40,6 +39,7 @@ class dialogExample(QMainWindow):
 
     def btnfc(self):
         print('hello')
+        print('Clicked')
         self.close()
         QCoreApplication.instance().quit
 
