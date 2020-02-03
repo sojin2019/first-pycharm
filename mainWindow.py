@@ -1,5 +1,7 @@
 import sys
 from PyQt5.QtWidgets import *
+from tkinter import *
+from functools import partial
 
 class mw:
 
@@ -10,50 +12,35 @@ class mw:
 
     def initUI(self):
         print("test2")
+        root = Tk()
+        root.geometry('300X200+100+200')
+        root.title('Plus')
+        num1 = StringVar()
+        num2 = StringVar()
 
-        #self.setGeometry(300, 300, 350, 450)
-        #self.setWindowTitle('Main window')
+        lb1 = Label(root, text="num1").grid(row=1, column=0)
+        lb2 = Label(root, text="num2").grid(row=2, column=0)
+        lbr = Label(root)
+        lbr.grid(row=7, column=2)
+        entry_num1 = Entry(root, textvariable=num1).grid(row=1, column=2)
+        entry_num2 = Entry(root, textvariable=num2).grid(row=2, column=2)
+        show_result = partial(self.show_result, lbr, num1, num2)
 
-        #self.statusbar = self.statusBar()
+        btn = Button(root, text="Plus", command=show_result).grid(row=3, column=0)
 
-        #self.textedit = QTextEdit(self)
-        #self.label = QLabel(self)
-        #self.lineedit = QLineEdit(self)
-
-        #self.label.resize(300, 20)  # width, height resizing
-        #self.label.move(10, 10) # 10, 10 moving
-
-        #self.lineedit.resize(10, 40)
-        #self.lineedit.move(10, 10)
-
-        #self.textedit.move(10, 70)
-        #self.textedit.resize(self.textedit.sizeHint())
-        #self.show()
-
-        #window = QVBoxLayout()
-        # self.comboBox = QComboBox(self)
-        #self.comboBox.addItem("1st Item")
-        #self.comboBox.addItem("2nd Item")
-        #self.comboBox.addItem("3rd Item")
-        #self.comboBox.addItem(self.menu)
-        #self.comboBox.setEditable(True)
-        #self.comboBox.clicked.connect(self.printComboBoxItem)
-
-        #window.addWidget(self.comboBox)
-        #window.addWidget(self.label)
-
-        #self.comboBox.activated[str].connect(self.ComboBoxEvent)
-
-        #self.setLayout(window)
-        #self.setGeometry(300, 300, 300, 300)
-        #self.setWindowTitle('ComboBox Test')
-        #self.show()
+        root = mainloop()
+        print("test2")
 
 
     def ComboBoxEvent(self, text):
             self.label1.setText(text)
             self.label1.adjustSize()
 
-
+    def show_result(lbr, n1, n2):
+        num_1 = (n1.get())
+        num_2 = (n2.get())
+        result = int(num_2) + int(num_2)
+        lbr.config(text="result = %d" % result)
+        return
 
 

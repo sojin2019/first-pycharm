@@ -1,5 +1,7 @@
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
+from tkinter import *
+from functools import partial
 import sys
 from PyQt5 import uic
 
@@ -38,12 +40,11 @@ class dialogExample(QMainWindow):
 
 
     def btnfc(self):
-        print('hello')
-        print('Clicked')
+        print('here!!!!')
         self.close()
+
+
         QCoreApplication.instance().quit
-
-
 
 
 
