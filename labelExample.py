@@ -34,6 +34,9 @@ def click_button_multiply():
 def click_button_devide():
     name_entry.insert(tk.END, "/")
 
+def click_button_power():
+    name_entry.insert(tk.END, "^")
+
 def click_button_one():
     name_entry.insert(tk.END, "1")
 
@@ -66,7 +69,18 @@ def click_button_zero():
 
 def click_button_equal():
     str=name_entry.get()
-    result=eval(str)
+
+    if "^" in str:
+        indexNo = str.find("^")
+        c = indexNo+1
+        a = int(str[:indexNo])
+        b = int(str[c:])
+        print(a,b)
+        result = pow(a, b)
+
+    else:
+        result=eval(str)
+
     name_entry.delete(first=0,last=tk.END)
     name_entry.insert(tk.END, result)
 
@@ -103,11 +117,11 @@ action = tk.Button(window, width=6, height=2, text="3", command=click_button_thr
 action.grid(column=3, row=5)
 action = tk.Button(window, width=6, height=2, text="+", command=click_button_plus)
 action.grid(column=4, row=5)
-action = tk.Button(window, width=6, height=2, text="L")
+action = tk.Button(window, width=6, height=2, text="^", command =click_button_power)
 action.grid(column=1, row=6)
 action = tk.Button(window, width=6, height=2, text="0", command=click_button_zero)
 action.grid(column=2, row=6)
-action = tk.Button(window, width=6, height=2, text="R")
+action = tk.Button(window, width=6, height=2, text="")
 action.grid(column=3, row=6)
 action = tk.Button(window, width=6, height=2, text="=", command=click_button_equal)
 action.grid(column=4, row=6)
