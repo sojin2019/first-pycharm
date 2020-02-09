@@ -37,12 +37,15 @@ def click_button_devide():
 def click_button_power():
     name_entry.insert(tk.END, "^")
 
-#def click_button_usd():
-    #result_int = eval(str/1000)
-    #print(result_int)
-    #result = result_int
-    #name_entry.delete(first=0,last=tk.END)
-    #name_entry.insert(tk.END, result)
+def click_button_usd():
+    str1 = name_entry.get()
+    int_str = int(str1)
+    result_int = int(int_str/1000)
+    print(result_int)
+    result_v = str(result_int)
+    result = result_v+"USD"
+    name_entry.delete(first=0,last=tk.END)
+    name_entry.insert(tk.END, result)
 
 def click_button_one():
     name_entry.insert(tk.END, "1")
@@ -127,7 +130,7 @@ action = tk.Button(window, width=6, height=2, text="^", command =click_button_po
 action.grid(column=1, row=6)
 action = tk.Button(window, width=6, height=2, text="0", command=click_button_zero)
 action.grid(column=2, row=6)
-action = tk.Button(window, width=6, height=2, text="USD") #, command=click_button_usd)
+action = tk.Button(window, width=6, height=2, text="to USD", command=click_button_usd)
 action.grid(column=3, row=6)
 action = tk.Button(window, width=6, height=2, text="=", command=click_button_equal)
 action.grid(column=4, row=6)
