@@ -2,6 +2,8 @@
 
 import tkinter as tk
 
+
+
 #window 객체생성
 window = tk.Tk()
 
@@ -11,9 +13,12 @@ window.title("Calculator")
 #Disable Resizing (x, y)
 window.resizable(False, False)
 
+
 name = tk.StringVar()
 name_entry = tk.Entry(window, width=14, textvariable=name)
 name_entry.grid(column=1, row=1, columnspan=6)
+
+
 
 #button fuction
 def click_button_CE():
@@ -134,6 +139,14 @@ action = tk.Button(window, width=6, height=2, text="to USD", command=click_butto
 action.grid(column=3, row=6)
 action = tk.Button(window, width=6, height=2, text="=", command=click_button_equal)
 action.grid(column=4, row=6)
+
+
+currency = tk.StringVar()
+label_1 = tk.Label(window, width=7, text="Currency")
+label_1.grid(column=1, row=7, columnspan=2)
+currency_input = tk.Entry(window, width=10, textvariable=currency)
+currency_input.grid(column=3, row=7, columnspan=3)
+
 
 #start window
 window.mainloop()
