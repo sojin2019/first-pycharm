@@ -2,6 +2,8 @@
 
 import tkinter as tk
 
+from tkinter import messagebox
+
 
 
 #window 객체생성
@@ -45,7 +47,18 @@ def click_button_power():
 def click_button_usd():
     str1 = name_entry.get()
     int_str = int(str1)
-    result_int = int(int_str/1000)
+    str2 = currency_input.get()
+
+    if not str2:
+        int_str2 = 0
+        messagebox.showerror('Error', 'Please input the currency!')
+        tk.mainloop()
+    else:
+        int_str2 = int(str2)
+
+    #print('null', str2, 'null')
+
+    result_int = int(int_str/int_str2)
     print(result_int)
     result_v = str(result_int)
     result = result_v+"USD"
@@ -142,7 +155,7 @@ action.grid(column=4, row=6)
 
 
 currency = tk.StringVar()
-label_1 = tk.Label(window, width=7, text="Currency")
+label_1 = tk.Label(window, width=6, text="Currency")
 label_1.grid(column=1, row=7, columnspan=2)
 currency_input = tk.Entry(window, width=10, textvariable=currency)
 currency_input.grid(column=3, row=7, columnspan=3)
