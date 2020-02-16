@@ -161,5 +161,13 @@ currency_input = tk.Entry(window, width=10, textvariable=currency)
 currency_input.grid(column=3, row=7, columnspan=3)
 
 
+num_of_claims = tk.StringVar()
+label_2 = tk.Label(window, width=6, text="# of Claims")
+label_2.grid(column=1, row=8, columnspan=2)
+num_of_claims_input = 20
+num_of_claims_input = tk.Entry(window, width=10, textvariable=num_of_claims)
+num_of_claims_input.grid(column=3, row=8, columnspan=3)
+
+
 #start window
 window.mainloop()
